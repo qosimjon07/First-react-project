@@ -1,6 +1,4 @@
 import Layout from "../../components/Layout";
-import Footer from "../../components/Layout/footer";
-import Header from "../../components/Layout/header";
 
 const Home = () => {
   return (

@@ -9,7 +9,7 @@ const Header = () => {
 		setIsMobileMenu(true);
 	};
 
-  const userEmail = localStorage.getItem("email");
+	const userEmail = localStorage.getItem("email");
 
 	return (
 		<header>
@@ -29,11 +29,11 @@ const Header = () => {
 							</button>
 						</div>
 						<NavLinks />
-            {userEmail ? <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">{userEmail}</div> : <SignButtons />}
+						{userEmail ? <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">{userEmail}</div> : <SignButtons />}
 					</div>
 				</div>
 
-				{isMobileMenu && <MobileMenu />}
+				{isMobileMenu && <MobileMenu setIsMobileMenu={setIsMobileMenu} />}
 			</div>
 		</header>
 	);

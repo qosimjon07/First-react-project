@@ -1,9 +1,13 @@
 import { homeIcon, cursorIcon, shieldIcon, closeIcon } from "../../utils/icons";
 
-const MobileMenu = () => {
+const MobileMenu = ({ setIsMobileMenu }) => {
+	const closeMobileMenu = () => {
+		setIsMobileMenu(false);
+	};
+
 	return (
-		<div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-			<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+		<div className="absolute inset-0 pl-2 transition transform origin-top-right md:hidden">
+			<div className="rounded-l-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 min-h-screen">
 				<div className="pt-5 pb-6 px-5">
 					<div className="flex items-center justify-between">
 						<div>
@@ -11,6 +15,7 @@ const MobileMenu = () => {
 						</div>
 						<div className="-mr-2">
 							<button
+								onClick={closeMobileMenu}
 								type="button"
 								className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
 								<span className="sr-only">Close menu</span>
@@ -27,42 +32,15 @@ const MobileMenu = () => {
 					</div>
 				</div>
 				<div className="py-6 px-5 space-y-6">
-					<div className="grid grid-cols-2 gap-y-4 gap-x-8">
-						<a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-							Pricing
+					<a href="#" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+						Sign up
+					</a>
+					<p className="mt-6 text-center text-base font-medium text-gray-500">
+						Existing customer?
+						<a href="#" className="text-indigo-600 hover:text-indigo-500">
+							Sign in
 						</a>
-
-						<a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-							Docs
-						</a>
-
-						<a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-							Help Center
-						</a>
-
-						<a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-							Guides
-						</a>
-
-						<a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-							Events
-						</a>
-
-						<a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-							Security
-						</a>
-					</div>
-					<div>
-						<a href="#" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-							Sign up
-						</a>
-						<p className="mt-6 text-center text-base font-medium text-gray-500">
-							Existing customer?
-							<a href="#" className="text-indigo-600 hover:text-indigo-500">
-								Sign in
-							</a>
-						</p>
-					</div>
+					</p>
 				</div>
 			</div>
 		</div>
